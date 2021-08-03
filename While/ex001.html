@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Exercícios - While</title>
+</head>
+<body>
+   <h1>CONTADOR!</h1>
+   O programa irá fazer uma contagem até o número que você escolher!
+   <p>Digite um número: <input type="number" name="userChoice" id="userChoice"><input type="button" value="Verificar" onclick="contar()"></p>   
+   <div id="resultado">
+
+   </div>
+   <script>
+      function contar() {
+         let txtNumber = document.querySelector('input#userChoice')
+         let ponteiro = Number(txtNumber.value)
+         let contador = 1
+         let res = document.querySelector('div#resultado')
+         while(contador <= ponteiro) {
+            if(contador == ponteiro) {
+               resultado.innerHTML += `<strong>${contador}. Acabou!</strong>`
+            } else {
+               resultado.innerHTML += `<strong>${contador}, </strong>`
+            }            
+            contador++
+         } 
+      }
+   </script>
+</body>
+</html>
