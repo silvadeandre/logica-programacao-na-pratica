@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>While - ex004</title>
+</head>
+<body>
+   <h1>Vai ou volta!</h1>
+   Esse programa irá pedir o primeiro valor da contagem, o segundo valor e o incremento, mostrando os valores no intervalo.
+   <p>Informe o primeiro valor: <input type="number" name="txtprimeiro" id="txtprimeiro"></p>
+   <p>Informe o segundo valor: <input type="number" name="txtsegundo" id="txtsegundo"></p>
+   <p>Informe o incremento: <input type="number" name="txtincrem" id="txtincrem"><input type="button" value="verificar" onclick="contar()"></p> 
+   <div id="res">
+
+   </div>
+   <script>
+      function contar() {
+         let primeiro = document.querySelector('input#txtprimeiro')
+         let valorPrimeiro = Number(primeiro.value)
+         let segundo = document.querySelector('input#txtsegundo')
+         let valorSegundo = Number(segundo.value)
+         let increm = document.querySelector('input#txtincrem')
+         let incremento = Number(increm.value)
+
+//os dois ifs permitem que o primeiro e o segundo valor sejam maiores ou menores entre si
+
+         if(valorPrimeiro < valorSegundo) {
+            while(valorPrimeiro <= valorSegundo) {
+               if (valorPrimeiro == valorSegundo || (valorPrimeiro + incremento) > valorSegundo) {
+                  res.innerHTML += `${valorPrimeiro}.`
+              } else {
+                  res.innerHTML += `${valorPrimeiro}, `
+              }
+               valorPrimeiro += incremento 
+            }
+         } else {
+            while(valorPrimeiro >= valorSegundo) {
+               if (valorPrimeiro == valorSegundo || (valorPrimeiro - incremento) < valorSegundo) {
+                  res.innerHTML += `${valorPrimeiro}.`
+              } else {
+                  res.innerHTML += `${valorPrimeiro}, `
+              }
+               valorPrimeiro -= incremento
+            }
+         }
+      }
+   </script>
+</body>
+</html>
