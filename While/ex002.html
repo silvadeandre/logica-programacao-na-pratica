@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>While - ex002</title>
+</head>
+<body>
+   <h1>CONTADOR COM SALTO! &#x1F998</h1>
+   Aqui, você escolhe o número final e de quanto em quanto o programa irá contar até chegar lá!
+   <p>Ex: contar até 10, de 2 em 2 (salto) = (0, 2, 4, 6, 8, 10)</p>
+   <p>Até que número o programa deve contar? <input type="number" name="txtnumber" id="txtnumber"></p>
+   <p>Informe o valor do salto: <input type="number" name="txtsalto" id="txtsalto"><input type="button" value="verificar" onclick="contar()"></p>
+   <div id="resultado">
+
+   </div>
+   <script>
+      function contar() {
+         let txtNumber = document.querySelector('input#txtnumber')
+         let ponteiro = Number(txtNumber.value)
+         let salto = document.querySelector('input#txtsalto')
+         let numSalto = Number(salto.value)
+         let c = 0
+         let res = document.querySelector('div#resultado')
+         while(c <= ponteiro) {
+            if(c == ponteiro) {
+               resultado.innerHTML += `<strong>${c}</strong>`
+            } else {
+               resultado.innerHTML += `<strong>${c}, </strong>`
+            }
+            c += numSalto
+         }
+      }
+   </script>
+</body>
+</html>
